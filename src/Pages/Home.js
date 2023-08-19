@@ -1,6 +1,6 @@
 import React from 'react'
 import MainSection from './MainSection'
-
+import CoinsTable from './CoinsTable'
 
 const Home = () => {
   return (
@@ -8,9 +8,9 @@ const Home = () => {
 
     <div>
     <MainSection/>
+    <CoinsTable/>
       
     </div>
   )
 }
-
 export default Home
