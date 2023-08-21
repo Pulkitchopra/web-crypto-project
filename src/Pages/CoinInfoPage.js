@@ -11,53 +11,56 @@ import {chartDays} from '../config/data'
 import Button from './Button';
 
 
+import Chart from 'chart.js/auto'
+
+
+
 const CoinInfoPage = ({coin}) => {
   const [historicData, setHistoricData] = useState();
   const [days, setDays] = useState(1);
 
   const { currency } = CryptoState();
 
+  const [flag, setFlag] = useState(false);
+
+
+
 
 
   const fetchHistoricData = async () => {
 
+      const {data} = await axios.get(HistoricalChart(coin.id, days, currency ));
+      
+      setFlag(true);
 
-    const {data} = await axios.get(HistoricalChart(coin.id, currency, days));
-
-
-
-
-    setHistoricData(data.prices);
+      setHistoricData(data.prices);
+    
+    
   }
-
-
-
-
-
+  
   useEffect(() => {
-
-
     fetchHistoricData();
-  }, [currency, days])
+  }, [days]);
+
+
+
+
 
 
 
   return (  
     <div style={{ display: 'flex', width: '75%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '15px'}}>
 
-
-
-
     { 
-      !historicData ? (
 
+
+
+
+
+      !historicData| flag === false ? (
         <LinearProgress>
 
         </LinearProgress>
-
-
-
-
       ) : (
 
         <>
@@ -130,9 +133,6 @@ const CoinInfoPage = ({coin}) => {
 
 
 
-
-
-
       <Button
 
 
@@ -143,7 +143,7 @@ const CoinInfoPage = ({coin}) => {
 
 
 
-      onClick={() => setDays( days.value ) }
+      onClick={() => { setDays( day.value ); setFlag(false) } }
 
 
 

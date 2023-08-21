@@ -2,7 +2,7 @@ import React from 'react'
 
 const Button = ({ children, selected, onClick }) => {
   return (
-    <div>
+    <div onClick={onClick} >
     {children}
     </div>
   )
