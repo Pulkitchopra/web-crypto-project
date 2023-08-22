@@ -13,7 +13,7 @@ const MainSection = () => {
 
     <Container style={{ height: '600px', display: 'flex', flexDirection: 'column', border: 'none', marginTop: '60px', justifyContent: 'space-around' }}>
     <div>
-    <Typography>Web Crypto Project</Typography>
+    <Typography variant='h2' style={{ textAlign: 'center', color: 'white', fontWeight: '600px' }}>Web Crypto Project</Typography>
 
 
 

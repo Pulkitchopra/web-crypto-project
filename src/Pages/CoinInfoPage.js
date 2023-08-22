@@ -121,10 +121,10 @@ const CoinInfoPage = ({coin}) => {
 
 
 
+    { chartDays.map((day) => (
+      
 
     
-
-    { chartDays.map((day) => {
 
 
 
@@ -160,7 +160,8 @@ const CoinInfoPage = ({coin}) => {
         { day.label }
       </Button> 
 
-    } ) }
+    )
+     ) }
 
       
    

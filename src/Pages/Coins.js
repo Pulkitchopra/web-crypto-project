@@ -6,29 +6,29 @@ import {SingleCoin} from '../config/api'
 import axios from 'axios'
 
 
-import { Typography, LinearProgress } from '@mui/material'
+import { Typography, LinearProgress} from '@mui/material'
 import CoinInfoPage from './CoinInfoPage'
+const numberWithCommas = (x) => {
 
 
-
+  return (x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')); 
+}
 const Coins = () => {
+
   const {id} = useParams();
+  
   const [coin, setCoin] = useState();
   
   const { currency, symbol } = CryptoState();
 
-
-
   const fetchCoin = async () => {
     const {data} = await axios.get(SingleCoin(id));
 
+
+
+
     setCoin(data);
   }
-
-
-
-
-
   useEffect(() => {
 
     fetchCoin();
@@ -43,48 +43,57 @@ const Coins = () => {
     </LinearProgress> )
   }
   return (
-    <div style={{ display: 'flex'}}>
+    <div  style={{ display: 'flex' }} >
 
 
 
 
-    <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px' }} >
+    <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px', padding: '16px' }} >
     <img
 
     src={ coin?.image.large}
-    alt={ coin?.name}
-    height= '300px'
 
+    alt={ coin?.name}
+
+    height= '300px'
     style={{ marginBottom: '15px' }}
     
+    
      />
-
-
     <Typography variant='h6'>
     {coin?.name}
 
+
     </Typography>
+
+
+
+
+
+
+
     <Typography variant='subtitle1'>
     {coin?.description.en.split('. ')[0]}   
+
+
+
     </Typography>
-
-
-
-
-
     <div>
-
-
-
 
       <span style={{ display: 'flex' }}>
       <Typography variant='h6'>
 
       Rank: 
+
+
+
       </Typography>
 
-      &nbsp; &nbsp;
 
+
+
+
+      &nbsp; &nbsp;
 
 
       <Typography variant='h5'>
@@ -93,6 +102,7 @@ const Coins = () => {
 
 
 
+      
       { coin?.market_cap_rank }
 
 
@@ -102,7 +112,6 @@ const Coins = () => {
       <span style={{ display: 'flex' }}>
       <Typography variant='h6'>
 
-      
       Current Price: 
       </Typography>
       &nbsp; &nbsp;
@@ -111,9 +120,22 @@ const Coins = () => {
 
 
 
+
       <Typography variant='h5'>
       {symbol} {''}
-      { coin?.market_data.current_price[currency.toLowerCase()]}
+
+
+
+
+
+
+
+
+
+
+      { numberWithCommas ( coin?.market_data.current_price[ currency.toLowerCase()] ) }
+
+
 
       </Typography>
 
@@ -139,7 +161,7 @@ const Coins = () => {
 
       <Typography variant='h5'>
       {symbol} {''}
-      { coin?.market_data.market_cap[currency.toLowerCase()].toString().slice(0, -6)}
+      { numberWithCommas( coin?.market_data.market_cap[ currency.toLowerCase()].toString().slice(0, -6) ) }
 
 
 

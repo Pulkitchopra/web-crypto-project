@@ -37,10 +37,6 @@ const Carousel = () => {
   }, [currency]);
 
 
-
-
-
-
   const items = trending.map((coin) => {
     let profit = coin.price_change_percentage_24h >= 0;
     return (
@@ -49,17 +45,22 @@ const Carousel = () => {
         flexDirection: 'column',
         alignItems: 'center',
 
+
+
+
+
         border: 'none',
         cursor: 'pointer',
-
         textTransform: 'uppercase',
-        color: 'white'
+        color: 'white',
+        fontSize: '18px',
+        textDecoration: 'none'
       }}
+
         to={`/coins/${coin.id}`} >
-
         <img
-          src={coin?.image}
 
+          src={coin?.image}
           alt={coin?.name}
           height='90px'
           style={{ marginBottom: '10' }}
@@ -68,24 +69,26 @@ const Carousel = () => {
         <span>
 
           {coin?.symbol}
+
+
+
           &nbsp;
 
 
 
-          <span style={{color: profit > 0 ? 'green' : 'red'  }}
-          
-          
-          >
-            {profit && '+'} {coin?.price_change_percentage_24h?.toFixed(2)}%
 
+          <span style={{color: profit > 0 ? 'green' : 'red'  }} 
+          >
+
+            {profit && '+'} {coin?.price_change_percentage_24h?.toFixed(2)}%
 
 
           </span>
 
         </span>
 
-
         <span>
+
 
 
 

@@ -76,24 +76,24 @@ const CoinsTable = () => {
   return (
 
 
-    <div style={{backgroundColor: 'blue' }} >
-
+    
+    <div>
     <Container style={{textAlign: 'center' }}>
-    <Typography>
-
+   
+    <Typography variant='h6' style={{ margin: '16px' }} >
         Crypto Prices
     </Typography>
 
 
 
-    
+ 
     <TextField 
     label = 'Search Crypto'
 
     variant='outlined'
-    style={{ marginBottom: '15px', width: '100%' }}
+
+    style={{ marginBottom: '15px', width: '100%',  }}
     onChange={(e) => setCryptoSearch(e.target.value)}
-    
      />
 
 
