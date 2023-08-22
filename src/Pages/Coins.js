@@ -6,7 +6,7 @@ import {SingleCoin} from '../config/api'
 import axios from 'axios'
 
 
-import { Typography, LinearProgress} from '@mui/material'
+import { Typography, LinearProgress, Box } from '@mui/material'
 import CoinInfoPage from './CoinInfoPage'
 const numberWithCommas = (x) => {
 
@@ -43,19 +43,23 @@ const Coins = () => {
     </LinearProgress> )
   }
   return (
-    <div  style={{ display: 'flex' }} >
+    <Box component= 'div' sx={{ display: 'flex', flexDirection: { md: 'row', sm: 'column', xs: 'column' }  }}  >
 
 
 
 
-    <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px', padding: '16px' }} >
+    {/* <div> */}
+    <Box component= 'div' sx={{ width:  { md: '40%', sm: '100%'  } , display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px', padding: '16px',   }}   >
+
+    {/* <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px', padding: '16px', backgroundColor: 'blue'  }} > */}
     <img
 
     src={ coin?.image.large}
 
+    
     alt={ coin?.name}
-
     height= '300px'
+
     style={{ marginBottom: '15px' }}
     
     
@@ -173,14 +177,16 @@ const Coins = () => {
     </div>
 
 
-
-
-
-    </div>
-
+    {/* </div> */}
+    </Box>
 
     <CoinInfoPage coin={coin} />
-    </div>
+    {/* </div> */}
+
+    
+    </Box>
+    
+
   )
 }
 export default Coins

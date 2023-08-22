@@ -8,31 +8,29 @@ const Header = () => {
 
   const darkTheme = createTheme({
     palette: {
-      mode: 'light',
+      mode: 'light'
     },
   });
+
   const { currency, setCurrency } = CryptoState();
+
   return (
 
 
 
-
-
-
     <ThemeProvider theme={darkTheme} >
+
     <Box>
 
     <AppBar position='static'>
       <Container>
         <Toolbar>
-        <Typography sx={{flexGrow: 1}}>Crypto Project</Typography>
+        <Typography sx={{flexGrow: 1, color: 'white' }}>Crypto Project</Typography>
         <Select 
         variant='outlined'
 
-        style={{
-          width: 100,
-          height: 40,
-        }}
+
+        style={{ width: 100, height: 40, color: 'white' }}
 
 
         value={currency}

@@ -80,7 +80,7 @@ const CoinsTable = () => {
     <div>
     <Container style={{textAlign: 'center' }}>
    
-    <Typography variant='h6' style={{ margin: '16px' }} >
+    <Typography variant='h6' style={{ margin: '16px', color: 'white'  }} >
         Crypto Prices
     </Typography>
 
@@ -92,7 +92,7 @@ const CoinsTable = () => {
 
     variant='outlined'
 
-    style={{ marginBottom: '15px', width: '100%',  }}
+    style={{ marginBottom: '15px', width: '100%', color: 'white'  }}
     onChange={(e) => setCryptoSearch(e.target.value)}
      />
 
@@ -199,15 +199,18 @@ const CoinsTable = () => {
 
             component= 'th'
 
-
-
-
-
-
             scope='row'
 
 
 
+
+
+
+
+            
+            
+            
+            
             style={{ display: 'flex', gap: '15px' }}
 
             >

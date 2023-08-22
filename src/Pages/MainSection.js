@@ -6,7 +6,7 @@ const MainSection = () => {
   return (
 
 
-    <div style={{backgroundColor: 'blue' }}>
+    <div>
 
 
 

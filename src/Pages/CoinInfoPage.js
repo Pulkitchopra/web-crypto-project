@@ -3,7 +3,7 @@ import axios from 'axios';
 import { CryptoState } from '../Context';
 
 import {HistoricalChart} from '../config/api'
-import { LinearProgress } from '@mui/material';
+import { LinearProgress, Box } from '@mui/material';
 
 
 import { Line } from 'react-chartjs-2';
@@ -42,25 +42,25 @@ const CoinInfoPage = ({coin}) => {
     fetchHistoricData();
   }, [days]);
 
-
-
-
-
-
-
   return (  
-    <div style={{ display: 'flex', width: '75%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '15px'}}>
+    <Box sx={{ display: 'flex', width: { md: '75%', sm: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '15px' }  }} >
+
+
+
+
+    {/* <div style={{ display: 'flex', width: '100%', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', marginTop: '15px'}}> */}
 
     { 
 
 
-
-
-
       !historicData| flag === false ? (
+
+
+
         <LinearProgress>
 
         </LinearProgress>
+        
       ) : (
 
         <>
@@ -175,14 +175,18 @@ const CoinInfoPage = ({coin}) => {
 
 
         </>
-
-
       )
+
     }
+    {/* </div> */}
 
 
-    </div>
+
+    </Box>
   )
 }
+
+
+
 
 export default CoinInfoPage
