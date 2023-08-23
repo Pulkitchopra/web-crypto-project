@@ -49,7 +49,7 @@ const Coins = () => {
 
 
     {/* <div> */}
-    <Box component= 'div' sx={{ width:  { md: '40%', sm: '100%'  } , display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px', padding: '16px',   }}   >
+    <Box component= 'div' sx={{ width:  { md: '40%', sm: '100%'  } , display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px', padding: '16px', color: 'white'  }}   >
 
     {/* <div style={{ width: '40%', display: 'flex', flexDirection: 'column', alignItems: 'center', marginTop: '15px', padding: '16px', backgroundColor: 'blue'  }} > */}
     <img
@@ -61,12 +61,9 @@ const Coins = () => {
     height= '300px'
 
     style={{ marginBottom: '15px' }}
-    
-    
      />
-    <Typography variant='h6'>
+    <Typography variant='h5' >
     {coin?.name}
-
 
     </Typography>
 
@@ -75,8 +72,11 @@ const Coins = () => {
 
 
 
-
     <Typography variant='subtitle1'>
+
+
+
+
     {coin?.description.en.split('. ')[0]}   
 
 

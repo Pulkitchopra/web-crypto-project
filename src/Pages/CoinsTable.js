@@ -211,7 +211,7 @@ const CoinsTable = () => {
             
             
             
-            style={{ display: 'flex', gap: '15px' }}
+            style={{ display: 'flex', gap: '15px', color: 'white' }}
 
             >
 
@@ -251,8 +251,8 @@ const CoinsTable = () => {
 
              />
 
+            <div style={{ display: 'flex', flexDirection: 'column', fontSize: '16px'}} >
 
-            <div style={{ display: 'flex', flexDirection: 'column',  }} >
 
 
 
@@ -321,7 +321,7 @@ const CoinsTable = () => {
 
 
 
-            <TableCell align='right'>
+            <TableCell align='right' style={{ color: 'white' }} >
             { symbol } {' '} { numberWithCommas ( row.current_price.toFixed(2))}
 
             </TableCell>
@@ -350,7 +350,7 @@ const CoinsTable = () => {
 
 
             <TableCell
-            align='right'
+            align='right' style={{ color: 'white' }}
             >
             { symbol } {' '} { numberWithCommas( row.market_cap.toString())}
             </TableCell>
@@ -369,9 +369,10 @@ const CoinsTable = () => {
       ) }
      </TableContainer>
 
-     <Pagination
-
-
+     <
+     
+     
+     Pagination
 
 
 
