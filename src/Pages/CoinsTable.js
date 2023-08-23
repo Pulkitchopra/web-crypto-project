@@ -42,13 +42,14 @@ const CoinsTable = () => {
     useEffect(() => {
         
         fetchCoins();
+// eslint-disable-next-line
     }, [currency]);
+
+
+
 
     const handleSearch = () => {
       return (
-
-
-
 
         coins.filter(
 

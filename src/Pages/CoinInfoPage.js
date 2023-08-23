@@ -11,8 +11,8 @@ import {chartDays} from '../config/data'
 import Button from './Button';
 
 
+// eslint-disable-next-line
 import Chart from 'chart.js/auto'
-
 
 
 const CoinInfoPage = ({coin}) => {
@@ -37,9 +37,9 @@ const CoinInfoPage = ({coin}) => {
     
     
   }
-  
   useEffect(() => {
     fetchHistoricData();
+    // eslint-disable-next-line
   }, [days]);
 
   return (  

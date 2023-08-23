@@ -30,9 +30,8 @@ const Coins = () => {
     setCoin(data);
   }
   useEffect(() => {
-
-    fetchCoin();
-
+    fetchCoin();  
+    // eslint-disable-next-line
   }, []);
 
 
