@@ -103,19 +103,19 @@ const CoinInfoPage = ({coin}) => {
           ]
         }}
         
-        // options={{
+         options={{
 
-        //   elements: {
-
-
+           elements: {
 
 
 
-        //     point: {
-        //       radius: 1
-        //     }
-        //   }
-        // }}
+
+
+             point: {
+               radius: 1
+             }
+           }
+         }}
         
         />
 

@@ -112,8 +112,6 @@ const CoinsTable = () => {
         <LinearProgress style={{background: 'black' }} />
 
       ) : (
-
-
         <Table>
         <TableHead style={{backgroundColor: 'white' }} >
 
