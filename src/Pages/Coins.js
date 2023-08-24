@@ -19,7 +19,7 @@ const Coins = () => {
   
   const [coin, setCoin] = useState();
   
-  const { currency, symbol } = CryptoState();
+  const { currency, currencySymbol } = CryptoState();
 
   const fetchCoin = async () => {
     const {data} = await axios.get(SingleCoin(id));
@@ -125,10 +125,11 @@ const Coins = () => {
 
 
       <Typography variant='h5'>
-      {symbol} {''}
 
 
 
+
+      {currencySymbol} {''}
 
 
 
@@ -160,10 +161,8 @@ const Coins = () => {
 
       &nbsp; &nbsp;
 
-
-
       <Typography variant='h5'>
-      {symbol} {''}
+      {currencySymbol} {''}
       { numberWithCommas( coin?.market_data.market_cap[ currency.toLowerCase()].toString().slice(0, -6) ) }
 
 

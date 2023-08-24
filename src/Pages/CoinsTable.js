@@ -21,7 +21,7 @@ const CoinsTable = () => {
 
     const [cryptoSearch, setCryptoSearch] = useState('');
     const [page, setPage] = useState(1);
-    const { currency, symbol } = CryptoState();
+    const { currency, currencySymbol } = CryptoState();
     const fetchCoins = async () => {
 
 
@@ -317,13 +317,9 @@ const CoinsTable = () => {
             
             
             
-            
-            
-
-
-
             <TableCell align='right' style={{ color: 'white' }} >
-            { symbol } {' '} { numberWithCommas ( row.current_price.toFixed(2))}
+            
+            { currencySymbol } {' '} { numberWithCommas ( row.current_price.toFixed(2))}
 
             </TableCell>
 
@@ -353,7 +349,7 @@ const CoinsTable = () => {
             <TableCell
             align='right' style={{ color: 'white' }}
             >
-            { symbol } {' '} { numberWithCommas( row.market_cap.toString())}
+            { currencySymbol } {' '} { numberWithCommas( row.market_cap.toString())}
             </TableCell>
 
 

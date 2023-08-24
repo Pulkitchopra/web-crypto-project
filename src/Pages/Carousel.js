@@ -11,7 +11,7 @@ import { Link } from 'react-router-dom'
 const Carousel = () => {
   const [trending, setTrending] = useState([])
 
-  const { currency, symbol } = CryptoState();
+  const { currency, currencySymbol } = CryptoState();
 
   const fetchTrendingCoinsList = async () => {
 
@@ -92,7 +92,8 @@ const Carousel = () => {
 
 
 
-          {symbol} {numberWithCommas(coin?.current_price.toFixed(2))}
+
+          {currencySymbol} {numberWithCommas(coin?.current_price.toFixed(2))}
         </span>
 
       </Link>
